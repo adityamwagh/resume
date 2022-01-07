@@ -16,12 +16,11 @@ jobs:
       run: |
         file resume.pdf | grep -q ' PDF '
     - name: Upload resume.pdf
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
-        # configure git
         git config --global user.name "adityamwagh"
         git config --global user.email "adityamwagh@gmail.com"
-
-        # setup ssh
         mkdir ~/.ssh
         chmod 700 ~/.ssh
         echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
@@ -31,8 +30,6 @@ jobs:
         cp -f resume.pdf "$GITHUB_WORKSPACE/resume/resume.pdf"
         cd "$GITHUB_WORKSPACE/resume"
         git add resume.pdf
-        git commit -m "[github actions] update cv"
+        git commit -m "[github actions] update resume"
         git push
-      env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       if: github.event_name == 'push' && github.ref == 'refs/heads/master'
