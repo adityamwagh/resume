@@ -24,7 +24,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           # The root LaTeX file to be compiled
-          root_file: resume.tex
+          root_file: ./resume.tex
           # Interpret the root_file input as bash glob pattern
 #           glob_root_file: # optional
           # The working directory for this action
