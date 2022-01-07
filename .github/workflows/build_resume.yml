@@ -19,7 +19,7 @@ jobs:
           # The LaTeX engine to be invoked
 #           compiler: # optional, default is latexmk
           # Extra arguments to be passed to the LaTeX engine
-#           args: # optional, default is -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
           # [Deprecated] Install extra packages by tlmgr
 #           extra_packages: # optional
           # Install extra packages by apk
@@ -40,21 +40,4 @@ jobs:
     - name: Check pdf file
       run: |
         file resume.pdf | grep -q ' PDF '
-    - name: Upload resume.pdf
-      env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-      run: |
-        git config --global user.name "adityamwagh"
-        git config --global user.email "adityamwagh@gmail.com"
-        mkdir ~/.ssh
-        chmod 700 ~/.ssh
-        echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
-        git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
-        git clone --depth=1 git@github.com:adityamwagh/resume.git "$GITHUB_WORKSPACE/resume"
-        cp -f resume.pdf "$GITHUB_WORKSPACE/resume/resume.pdf"
-        cd "$GITHUB_WORKSPACE/resume"
-        git add resume.pdf
-        git commit -m "[github actions] update resume"
-        git push
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
