@@ -1,51 +1,35 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Build PDF on commit.
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-#   workflow_dispatch: 
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+name: Github Actions CI
+on: push
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Github Action for LaTeX
-        uses: xu-cheng/latex-action@v2
-        with:
-          # The root LaTeX file to be compiled
-          root_file: resume.tex
-          # Interpret the root_file input as bash glob pattern
-#           glob_root_file: # optional
-          # The working directory for this action
-#           working_directory: # optional
-          # The LaTeX engine to be invoked
-#           compiler: # optional, default is latexmk
-          # Extra arguments to be passed to the LaTeX engine
-#           args: # optional, default is -pdf -file-line-error -halt-on-error -interaction=nonstopmode
-          # [Deprecated] Install extra packages by tlmgr
-#           extra_packages: # optional
-          # Install extra packages by apk
-#           extra_system_packages: # optional
-          # Install extra .ttf/.otf fonts.
-#           extra_fonts: ./fonts/*.ttf
-          # Arbitrary bash codes to be executed before compiling LaTeX documents
-          pre_compile: tlmgr update --self && tlmgr update --all
-          # Arbitrary bash codes to be executed after compiling LaTeX documents
-          post_compile: latexmk -c
-          # Instruct latexmk to enable --shell-escape
-#           latexmk_shell_escape: # optional
-          # Instruct latexmk to use LuaLaTeX
-#           latexmk_use_lualatex: # optional
-          # Instruct latexmk to use XeLaTeX
-          latexmk_use_xelatex: true
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: resume.tex
+        latexmk_use_xelatex: true
+    - name: Check pdf file
+      run: |
+        file resume.pdf | grep -q ' PDF '
+    - name: Upload resume.pdf
+      run: |
+        # configure git
+        git config --global user.name "adityamwagh"
+        git config --global user.email "adityamwagh@gmail.com"
+
+        # setup ssh
+        mkdir ~/.ssh
+        chmod 700 ~/.ssh
+        echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
+        git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+        git add resume.pdf
+        git commit -m "[github actions] update cv"
+        git push
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
