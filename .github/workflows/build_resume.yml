@@ -38,7 +38,7 @@ jobs:
           # Install extra packages by apk
 #           extra_system_packages: # optional
           # Install extra .ttf/.otf fonts.
-          extra_fonts: ./fonts/*.ttf
+#           extra_fonts: ./fonts/*.ttf
           # Arbitrary bash codes to be executed before compiling LaTeX documents
           pre_compile: tlmgr update --self && tlmgr update --all
           # Arbitrary bash codes to be executed after compiling LaTeX documents
