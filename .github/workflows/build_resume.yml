@@ -27,6 +27,9 @@ jobs:
         echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         git config --global core.sshCommand "ssh -i ~/.ssh/id_ed25519 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+        git clone --depth=1 git@github.com:adityamwagh/resume.git "$GITHUB_WORKSPACE/resume"
+        cp -f resume.pdf "$GITHUB_WORKSPACE/resume/resume.pdf"
+        cd "$GITHUB_WORKSPACE/resume"
         git add resume.pdf
         git commit -m "[github actions] update cv"
         git push
