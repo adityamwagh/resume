@@ -1,1 +1,1 @@
-A thing to easily update and format my resume :)
+A thing to easily update and format my resume.
