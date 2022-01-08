@@ -37,5 +37,13 @@ jobs:
           # Instruct latexmk to use XeLaTeX
           latexmk_use_xelatex: true  
     - name: Check pdf file
-      run: ls
-      # if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        file resume.pdf | grep -q ' PDF '
+    - name: Upload file to repository
+      run: |
+        git config --global user.name "adityamwagh"
+        git config --global user.email "adityamwagh@gmail.com"
+        git add resume.pdf
+        git commit -m "commit message"
+        git push
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
