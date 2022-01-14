@@ -33,10 +33,10 @@ jobs:
           extra_fonts: ./fonts/*.ttf
 
           # Arbitrary bash codes to be executed before compiling LaTeX documents
-          pre_compile: tlmgr update --self && tlmgr update --all
+          # pre_compile: tlmgr update --self && tlmgr update --all
 
           # Arbitrary bash codes to be executed after compiling LaTeX documents
-          post_compile: latexmk -c
+          # post_compile: latexmk -c
 
           # Instruct latexmk to enable --shell-escape
           # latexmk_shell_escape: # optional
@@ -56,6 +56,6 @@ jobs:
         git config --global user.name "adityamwagh"
         git config --global user.email "adityamwagh@gmail.com"
         git add resume_aditya_wagh.pdf
-        git commit -m "commit message"
+        git commit -m "[automatic build]"
         git push
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
