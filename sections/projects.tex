@@ -3,69 +3,86 @@
 \resumeSubHeadingListStart
 
 % Fully Convolutional Networks for Post-Earthquake Damage Assessment
-\resumeItem{Fully Convolutional Networks for Post-Earthquake Damage Assessment}{}
+\resumeItem{Fully Convolutional Networks for Post-Earthquake Damage Assessment}{(tensorflow)}
 \resumeItemListStart
-\resumeItem{About}
-{A FCN for semantic segmentation of components of a damaged building, another FCN for semantic segmentation of extent of damage.}
+\resumeItem{Introduction}
+{Developed a FCN for semantic segmentation of components and damage state of a damaged building.}
 \resumeItem{Model}
-{Designed two networks with a symmetric encoder and decoder, one to classify building components and another to detect damaged components.}
+{Symmetric encoder and decoder networks to classify building components and to detect damaged components.}
 \resumeItem{Outcome}
-{Achieved a mean IoU of 83\% over 5 component classes and mean IoU of 70\% for 5 damage states.}
+{Achieved a mean IoU of 83\% over 5 component classes and mean IoU of 70\% for 5 damage state classes.}
+\resumeItemListEnd
+
+% Dimensionality Reduction using Convolutional Autoencoders.
+\resumeItem{Dimensionality Reduction using Convolutional Autoencoders}{(pytorch, scikit-learn)}
+\resumeItemListStart
+\resumeItem{Introduction}
+{Developed a deep convolutional autoencoder to reduce the dimensions of 28x28 size Fashion MNIST images.}
+\resumeItem{Model}
+{Implemented an 10 layer convolutional autoencoder with a latent space of 64 dimensions.}
+\resumeItem{Visualisation}{Further reduced dimensions of the latent space to 2 dimensions using t-SNE, and visualised the result.}
 \resumeItemListEnd
 
 % Marker based Augmented Reality
-\resumeItem{Marker based Augmented Reality}{}
+\resumeItem{Marker based Augmented Reality}{(opencv, pyapriltag)}
 \resumeItemListStart
-\resumeItem{About}
-{A near perfect 3D cube drawn on the image of an AprilTag marker.}
+\resumeItem{Introduction}
+{Drew a AR 3D cube on the image of an AprilTag marker.}
 \resumeItem{Marker Detection}
 {Detected an AprilTag marker by computing corresponding corners and centers of the marker.}
 \resumeItem{Perspective Transformation}
 {Solved a PnP transform between the corners of a marker and a face of a cube.}
 \resumeItem{Cube Construction}
-{Projected 8 point of the cube on the image and drew lines using OpenCV}
+{Computed and projected 8 points of the cube on the image and drew lines using OpenCV}
 \resumeItemListEnd
 
-% Pose Estimation btwenn two images.
-\resumeItem{Pose Estimation between two images}{}
+% Pose Estimation between two images.
+\resumeItem{Pose Estimation between two images}{(numpy, opencv, pyapriltag)}
 \resumeItemListStart
-\resumeItem{About}
-{Calibrate a camera using a calibration rig and estimate pose between two images}
+\resumeItem{Introduction}
+{Computed the relative pose between two images captured from different viewpoints.}
 \resumeItem{Camera Calibration}
-{Calibrated a camera using April Tag based calibration rig. Got the Camera matrix and distortion parameters.}
+{Calibrated a camera using April Tag based calibration rig and removed distortion from the images.}
 \resumeItem{Fundamental Matrix Estimation}
-{Removed distortion from the images and computed the fundamental matrix using the normalised 8 point algorithm.}
+{Computed the fundamental matrix using the normalized 8 point algorithm.}
 \resumeItem{Pose Estimation}
-{estimated the relative pose between two images by decomposing essential matrix.}
+{Estimated the relative pose between two images by decomposing essential matrix.}
 \resumeItemListEnd
 
 % Bag of Visual Words for finding similar images
-\resumeItem{Bag of Visual Words for finding similar images}{}
+\resumeItem{Bag of Visual Words for finding similar images}{(opencv, scikit-learn)}
 \resumeItemListStart
-\resumeItem{About}
-{Calibrate a camera using a calibration rig and estimate pose between two images}
-\resumeItem{Camera Calibration}
-{Calibrated a camera using April Tag based calibration rig. Got the Camera matrix and distortion parameters.}
-\resumeItem{Fundamental Matrix Estimation}
-{Removed distortion from the images and computed the fundamental matrix using the normalised 8 point algorithm.}
-\resumeItem{Pose Estimation}
-{Estimated the relative pose between two images by decomposing essential matrix.}
+\resumeItem{Introduction}
+{Developed a method to find similar query images from a database of 29,000 50x50 resolution images.}
+\resumeItem{Feature Extraction}{Computed SIFT features for each image in database using OpenCV's built-in SIFT feature extractor.}
+\resumeItem{Feature Clustering}{Used the k-means clustering algorithm in to compute 800 cluster centroids which serve as visual words.}
+\resumeItem{Feature Histograms}{Computed histograms of computed visual words for all the images in query and database.}
+\resumeItem{Similar Image Query}{Used the k-nearest neighbours algorithm to find the histogram that is most similar to query image.}
+\resumeItemListEnd
+
+% 3D Plane fitting in Point Cloud Data
+\resumeItem{3D Plane fitting in Point Cloud Data}{(open3d, numpy)}
+\resumeItemListStart
+\resumeItem{Introduction}
+{Implemented the RANSAC algorithm from scratch on 3D point cloud data in pcd format.}
+\resumeItem{Point Selection}{Randomly selected 3 points in data and computed plane parameters using parametric equation of a plane}
+\resumeItem{Plane Parameters}{Computed the best plane parameters by minimizing perpendicular distance of each point in data from the plane.}
 \resumeItemListEnd
 
 % % Variable Computation in Recurrent Neural Networks
 % \resumeItem{Variable Computation in Recurrent Neural Networks}{}
 % \resumeItemListStart
-% \resumeItem{About}{A NumPy implementation of the paper \href{https://arxiv.org/abs/1611.06188}{arxiv:1611.06188}}
+% \resumeItem{Introduction}{A NumPy implementation of the paper \href{https://arxiv.org/abs/1611.06188}{arxiv:1611.06188}}
 % \resumeItem{Model}
 % {Implemented a learnable scheduler which varies the amount of computation based on data provided to the neural network.}
 % \resumeItem{Outcome}
 % {Achieved a 50\% reduction in the number of computation for text data.}
 % \resumeItemListEnd
-% Kinematic and Dynamic Control of a KUKA Manipulator
 
+% % Kinematic and Dynamic Control of a KUKA Manipulator
 % \resumeItem{Kinematic and Dynamic Control of a KUKA Manipulator}{}
 % \resumeItemListStart
-% \resumeItem{About}{A robot controller for the KUKA 7-joint manipulator.}
+% \resumeItem{Introduction}{A robot controller for the KUKA 7-joint manipulator.}
 % \resumeItem{Kinematics \& Dynamics}
 % {Developed the forward and inverse kinematic and dynamic model of the manipulator.}
 % \resumeItem{Controller}
@@ -75,7 +92,7 @@
 % % Smart Pet Feeder
 % \resumeItem{Smart Pet Feeder}{}
 % \resumeItemListStart
-% \resumeItem{About}
+% \resumeItem{Introduction}
 % {A bluetooth operated automatic feeder with an accompanying android app.}
 % \resumeItem{App}
 % {Designed an android app to control 3 features of the feeder - drop food, disable feeder and reset food drop count. }
@@ -88,14 +105,14 @@
 % % Tango+
 % \resumeItem{Tango+}{}
 % \resumeItemListStart
-% \resumeItem{About}{A Tango inspired color scheme for Visual Studio Code. }
+% \resumeItem{Introduction}{A Tango inspired color scheme for Visual Studio Code. }
 % \resumeItem{Outcome}{Attracted 850+ downloads on the Visual Studio Marketplace}
 % \resumeItemListEnd
 
 % % Clean Portfolio
 % \resumeItem{Clean Portfolio}{}
 % \resumeItemListStart
-% \resumeItem{About}{A portfolio page theme for the Jekyll static site generator.}
+% \resumeItem{Introduction}{A portfolio page theme for the Jekyll static site generator.}
 % \resumeItemListEnd
 
 \resumeSubHeadingListEnd
