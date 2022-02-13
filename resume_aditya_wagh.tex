@@ -63,12 +63,12 @@
 % sections formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape \color{NYUViolet} \raggedright\large
-}{}{0em}{}[\color{black} \hrule \vspace{-5pt}]
+}{}{0em}{}[\color{black} \hrule \vspace{-4pt}]
 
 % custom commands
 
-% resume subheading
-\newcommand{\resumeSubheading}[4]{
+% resume subheading four items
+\newcommand{\resumeHeadingFour}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
@@ -76,8 +76,13 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-% resume sub-item
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+% resume subheading two items
+\newcommand{\resumeHeadingTwo}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
 
 % resume item
 \newcommand{\resumeItem}[2]{
@@ -86,13 +91,19 @@
   }
 }
 
+% resume sub-item
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% resume item description
+\newcommand{\resumeItemDesc}[1]{\item\small{#1} \vspace{-4pt}}
+
 % resume sub-heading list
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 
 % resume item list
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 % resume starts here
 \begin{document}
