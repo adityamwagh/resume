@@ -261,3 +261,4 @@ TSWLatexianTemp*
 *.sta
 
 .DS_Store
+sections\__latexindent_temp.tex
