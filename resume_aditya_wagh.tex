@@ -12,7 +12,7 @@
 \usepackage[top=0in, left=0.5in, right=0.5in, bottom=0in]{geometry}
 \usepackage{fontawesome}
 \usepackage{latexsym}
-\usepackage{titlesec}
+\usepackage[explicit]{titlesec}
 \usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
@@ -47,17 +47,19 @@
 \raggedbottom{}
 \raggedright{}
 \setlength{\tabcolsep}{0in}
-\setlength{\titlewidth}{\textwidth}
+\setlength{\titlewidth}{\pdfpagewidth}
 
 % colors
 \definecolor{NYUViolet}{RGB}{87, 6, 140}
-\definecolor{LightGray}{gray}{0.75}
+\definecolor{LightGray}{gray}{0.9}
 % 66,133,244
 
 % sections formatting
 \titleformat{\section}
-{\vspace{-4pt} \color{LightGray}\hrule height 0.7pt width \pdfpagewidth \vspace{3pt} \bfseries \large}
-{}{0em}{\centering \color{Black}\MakeUppercase}[ \hrule height 0.7pt \vspace{-4pt}]
+  {\vspace{-8pt} \color{LightGray}\titlerule[1pt] \vspace{2pt}\centering \large \normalfont \bfseries}
+  {\color{Black} \titlerule \quad \MakeUppercase{#1}}{0em}{\vspace{0pt}}
+  [{ \vspace{-1pt}\color{LightGray}\titlerule[1pt] \vspace{-4pt}}]
+
 
 % resume subheading four items
 \newcommand{\resumeHeadingFour}[4]{
@@ -116,14 +118,15 @@
 	\faPhone{} \space{} (929) 424 1931 \\
 
 	\vspace{4pt}
-	Final year graduate student well-versed in 3D computer vision tasks including but not limited to multi-view geometry,
-	SfM, SLAM, Bundle Adjustment etc with an in-depth understanding of LiDAR point-cloud processing.
+	Final year ECE graduate student well-versed in Multi-view geometry, 3D reconstruction,
+	Visual-Inertial Odometry, SLAM, Visual Localization, Sensor Fusion, Bundle Adjustment, LiDAR point-cloud processing.
 \end{center}
 %  \noindent\makebox[\linewidth]{\rule{\paperwidth}{1pt}}
 % \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
 
 % main content
 \justifying{}
+% \hrule height 0.7pt width \pdfpagewidth
 \import{sections/}{education}
 \import{sections/}{experience}
 % \import{sections/}{coursework}
