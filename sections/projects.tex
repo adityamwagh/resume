@@ -1,92 +1,87 @@
 % PROJECTS
 \section{Projects}
-\resumeSubHeadingListStart
+\resumeSubHeadingListStart{}
 
-% Fully Convolutional Networks for Post-Earthquake Damage Assessment
-\resumeHeadingTwo{Post-Earthquake Damage Assessment using Fully Convolutional Networks}{Tensorflow, Keras | \href{https://github.com/adityamwagh/damage-assessment}{GitHub}}
-\resumeItemListStart
-\resumeItemDesc{Designed multi-task fully convolutional networks for semantic segmentation of building components and their damage state}
-\resumeItemDesc{Implemented batch normalization layers to enable faster convergence and better generalization over real data
-	since the data used for the project was synthetically generated using physics based graphical models}
-\resumeItemDesc
-{Achieved a mAP of 83\% over 5 component classes and mAP of 70\% for 5 damage state classes}
-\resumeItemListEnd
-
-% Dimensionality Reduction using Convolutional Autoencoders.
-\resumeHeadingTwo{Dimensionality Reduction using Convolutional Autoencoders}{PyTorch | \href{https://github.com/adityamwagh/convae-dimen-reduc}{GitHub}}
-\resumeItemListStart
-\resumeItemDesc
-{Developed a deep convolutional autoencoder to reduce the dimensions of 28x28 sized Fashion MNIST images}
-\resumeItemDesc
-{Designed an encoder-decoder network with latent space dimension of 64 to guarantee proper reconstruction of input}
-\resumeItemDesc
-{Implemented batch normalization layers, learning rate decay and exponential scaling for faster convergence}
-\resumeItemDesc
-{Further reduced dimensions of the latent space to 2 dimensions using t-SNE to visualise the reduced dimensions}
-\resumeItemListEnd
-
-% Bag of Visual Words for finding similar images
-\resumeHeadingTwo{Visual Place Recognition using Bag of Visual Words}{OpenCV, Sklearn | \href{https://github.com/adityamwagh/bovw}{GitHub}}
-\resumeItemListStart
+% Vision-IMU Sensor Fusion using Kalman Filters
+\resumeHeadingTwo{Fast 3D Object Detection in the Wild}{MATLAB $\cdot$ \href{https://github.com/adityamwagh/vcrnn}{\faGithub}}
+\resumeItemListStart{}
 \resumeItemDesc{Computed SIFT features for each image in database and queries using OpenCV's built-in SIFT feature extractor}
 \resumeItemDesc{Employed the k-means clustering algorithm to compute 800 cluster centroids to be used
 	as visual words to generate a histogram of visual words in each image}
-\resumeItemDesc{Computed histograms of visual words for all the query images and database images using OpenCV's histogram generator and extracted similar images from the database by using the k-nearest neighbours algorithm on the generated histograms}
-\resumeItemListEnd
+\resumeItemDesc{Computed histograms of visual words for all the query images and database images
+	and extracted similar images from the database by using the k-nearest neighbours algorithm on the generated histograms}
+\resumeItemListEnd{}
 
-% Two-View Geometry based Relative Pose Estimation
-\resumeHeadingTwo{Two-View Geometry based Relative Pose Estimation}{OpenCV | \href{https://github.com/adityamwagh/pose-estimation}{GitHub}}
-\resumeItemListStart
-\resumeItemDesc
-{Calibrated a camera using a calibration rig and removed radial distortion from the input images using the obtained camera matrix and distortion coefficient}
-\resumeItemDesc
-{Computed the fundamental matrix using the normalized 8 point algorithm and obtained the essential matrix using the fundamental matrix and camera matrix}
-\resumeItemDesc
-{Decomposed the essential matrix to obtain the orientation and translation vectors between the images}
-\resumeItemListEnd
+% Fully Convolutional Networks for Post-Earthquake Damage Assessment
+\resumeHeadingTwo{Post-Earthquake Damage Assessment using Fully Convolutional Networks}
+{Tensorflow, Keras $\cdot$ \href{https://github.com/adityamwagh/damage-assessment}{\faGithub}}
+\resumeItemListStart{}
 
-% Marker based Augmented Reality
-\resumeHeadingTwo{Marker based Augmented Reality}{OpenCV | \href{https://github.com/adityamwagh/ar-cube}{GitHub}}
-\resumeItemListStart
-\resumeItemDesc
-{Obtained interest points to compute the epipolar geometry by detecting the corners of an AprilTag fiducial marker}
-\resumeItemDesc
-{Solved a PnP problem to compute 3D to 2D correspondence between the marker corners and face of a cube in 3D space}
-\resumeItemDesc
-{Projected 8 corners of the cube on the image and constructed a cube in 2D by joining the points. }
-\resumeItemListEnd
+\resumeItemDesc{Designed fully convolutional network for multiple semantic segmentation of building
+	components and their damage state using a shared backbone}
+\resumeItemDesc{Implemented batch normalization layers to enable faster convergence and better generalization over real data
+	since the data used for the project was synthetically generated using physics based graphical models}
+\resumeItemDesc{Achieved a mAP of 83\% over 5 component classes and mAP of 70\% for 5 damage state classes}
 
-% 3D Plane fitting in Point Cloud Data
-\resumeHeadingTwo{3D Plane fitting in Point Cloud Data}{Open3D, Plotly | \href{https://github.com/adityamwagh/ransac-pcl}{GitHub}}
-\resumeItemListStart
-\resumeItemDesc
-{Implemented the RANSAC algorithm to remove outlier data points which do not lie on a plane in the 3D point cloud data}
-\resumeItemDesc{Randomly selected 3 points in data and computed plane parameters using parametric equation of a plane}
-\resumeItemDesc{Computed the best plane parameters by minimizing perpendicular distance of each point in data from the plane}
-\resumeItemListEnd
+\resumeItemListEnd{}
 
-% % Variable Computation in Recurrent Neural Networks
-% \resumeHeadingTwo{Variable Computation in Recurrent Neural Networks}{NumPy | \href{https://github.com/adityamwagh/vcrnn}{GitHub}}
-% \resumeItemListStart
-% \resumeItemDesc{Implemented the paper \href{https://arxiv.org/abs/1611.06188}{arxiv:1611.06188} in NumPy}
-% \resumeItemDesc
-% {Implemented a learnable scheduler which varies the amount of computation based on data provided to the neural network}
-% \resumeItemDesc
-% {Achieved a 50\% reduction in the number of computation for redundant text data}
-% \resumeItemListEnd
+% Bag of Visual Words for finding similar images
+\resumeHeadingTwo{Visual Place Recognition using Bag of Visual Words}{OpenCV, Sklearn $\cdot$ \href{https://github.com/adityamwagh/bovw}{\faGithub}}
+\resumeItemListStart{}
+\resumeItemDesc{Computed SIFT features for each image in database and queries using OpenCV's built-in SIFT feature extractor}
+\resumeItemDesc{Employed the k-means clustering algorithm to compute 800 cluster centroids to be used
+	as visual words to generate a histogram of visual words in each image}
+\resumeItemDesc{Computed histograms of visual words for all the query images and database images
+	and extracted similar images from the database by using the k-nearest neighbours algorithm on the generated histograms}
+\resumeItemListEnd{}
 
-% % Kinematic and Dynamic Control of a KUKA Manipulator
-% \resumeHeadingTwo{Kinematic and Dynamic Control of a KUKA Manipulator}{Meshcat, Pinnochio | \href{https://github.com}{GitHub}}
-% \resumeItemListStart
+% Deep Image Matching using Local Feature Trasformers
+\resumeHeadingTwo{Deep Image Matching using Local Feature Trasformers}{OpenCV $\cdot$ \href{https://github.com/adityamwagh/ar-cube}{\faGithub}}
+\resumeItemListStart{}
+\resumeItemDesc{Computed SIFT features for each image in database and queries using OpenCV's built-in SIFT feature extractor}
+\resumeItemDesc{Employed the k-means clustering algorithm to compute 800 cluster centroids to be used
+	as visual words to generate a histogram of visual words in each image}
+\resumeItemDesc{Computed histograms of visual words for all the query images and database images
+	and extracted similar images from the database by using the k-nearest neighbours algorithm on the generated histograms}
+\resumeItemListEnd{}
+
+% Vision-IMU Sensor Fusion using Kalman Filters
+\resumeHeadingTwo{State Estimation of a Quadrotor using On-board Camera and IMU}{MATLAB $\cdot$ \href{https://github.com/adityamwagh/vcrnn}{\faGithub}}
+\resumeItemListStart{}
+\resumeItemDesc{Computed SIFT features for each image in database and queries using OpenCV's built-in SIFT feature extractor}
+\resumeItemDesc{Employed the k-means clustering algorithm to compute 800 cluster centroids to be used
+	as visual words to generate a histogram of visual words in each image}
+\resumeItemDesc{Computed histograms of visual words for all the query images and database images
+	and extracted similar images from the database by using the k-nearest neighbours algorithm on the generated histograms}
+\resumeItemListEnd{}
+
+% Kinematic and Dynamic Control of a KUKA Manipulator
+% \resumeHeadingTwo{Kinematic and Dynamic Control of a KUKA Manipulator}{Meshcat, Pinnochio $\cdot$ \href{https://github.com}{\faGithub}}
+% \resumeItemListStart{}
 % \resumeItemDesc{Designed a robot controller for the KUKA 7-joint manipulator}
 % \resumeItemDesc{Computed the forward and inverse kinematic and dynamic parameters of the manipulator}
 % \resumeItemDesc{Designed and compared a PID Controller, Resolved Rate Controller and an Impedance Controller for the manipulator}
-% \resumeItemListEnd
+% \resumeItemListEnd{}
+
+% % Two-View Geometry based Relative Pose Estimation
+% \resumeHeadingTwo{Two-View Geometry based Relative Pose Estimation}{OpenCV $\cdot$ \href{https://github.com/adityamwagh/pose-estimation}{\faGithub}}
+% \resumeItemListStart{}
+% \resumeItemDesc{Calibrated a camera using a calibration rig and removed radial distortion from the input images using the obtained camera matrix and distortion coefficient}
+% \resumeItemDesc{Computed the fundamental matrix using the normalized 8 point algorithm and obtained the essential matrix using the fundamental matrix and camera matrix}
+% \resumeItemDesc{Decomposed the essential matrix to obtain the orientation and translation vectors between the images}
+% \resumeItemListEnd{}
+
+% % Marker based Augmented Reality
+% \resumeHeadingTwo{Marker based Augmented Reality}{OpenCV $\cdot$ \href{https://github.com/adityamwagh/ar-cube}{\faGithub}}
+% \resumeItemListStart{}
+% \resumeItemDesc{Obtained interest points to compute the epipolar geometry by detecting the corners of an AprilTag fiducial marker}
+% \resumeItemDesc{Solved a PnP problem to compute 3D to 2D correspondence between the marker corners and face of a cube in 3D space}
+% \resumeItemDesc{Projected 8 corners of the cube on the image and constructed a cube in 2D by joining the points }
+% \resumeItemListEnd{}
 
 % % Smart Pet Feeder
-% \resumeHeadingTwo{Smart Pet Feeder}{PBASIC | \href{https://github.com}{GitHub}}
-% \resumeItemListStart
-% \resumeItemDesc
+% \resumeHeadingTwo{Smart Pet Feeder}{PBASIC $\cdot$ \href{https://github.com}{\faGithub}}
+% \resumeItemListStart{}% \resumeItemDesc
 % {Developed a smart bluetooth operated automatic feeder with an accompanying android app}
 % \resumeItemDesc
 % {Designed an android app to control 3 features of the feeder - drop food, disable feeder and reset food drop count. }
@@ -94,19 +89,16 @@
 % {Employed a HC-06 bluetooth module to connect a BASIC Stamp micro-controller to to the mobile app}
 % \resumeItemDesc
 % {Designed and 3D printed CAD models of the chasis of the feeder}
-% \resumeItemListEnd
+% \resumeItemListEnd{}
 
 % % Tango+
-% \resumeHeadingTwo{Tango+}{Javascript | \href{https://github.com}{GitHub}}
-% \resumeItemListStart
-% \resumeItemDesc{Designed a Tango inspired color scheme for Visual Studio Code. }
+% \resumeHeadingTwo{Tango+}{Javascript $\cdot$ \href{https://github.com}{\faGithub}}
+% \resumeItemListStart{}% \resumeItemDesc{Designed a Tango inspired color scheme for Visual Studio Code. }
 % \resumeItemDesc{Received 850+ downloads on the Visual Studio Marketplace}
-% \resumeItemListEnd
+% \resumeItemListEnd{}
 
 % % Clean Portfolio
-% \resumeHeadingTwo{Clean Portfolio}{Jekyll, Bootstrap | \href{https://github.com}{GitHub}}
-% \resumeItemListStart
-% \resumeItemDesc{Designed a portfolio page theme for the Jekyll static site generator}
-% \resumeItemListEnd
-
-\resumeSubHeadingListEnd
+% \resumeHeadingTwo{Clean Portfolio}{Jekyll, Bootstrap $\cdot$ \href{https://github.com}{\faGithub}}
+% \resumeItemListStart{}% \resumeItemDesc{Designed a portfolio page theme for the Jekyll static site generator}
+% \resumeItemListEnd{}
+\resumeSubHeadingListEnd{}{}

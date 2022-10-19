@@ -6,10 +6,11 @@
 %------------------------
 
 % \documentclass[a4paper]{article}
-\documentclass[letterpaper]{article}
+\documentclass[a4paper]{article}
 
 % external packages
-\usepackage[margin=0.5in]{geometry}
+\usepackage[top=0in, left=0.5in, right=0.5in, bottom=0in]{geometry}
+\usepackage{fontawesome}
 \usepackage{latexsym}
 \usepackage{titlesec}
 \usepackage{marvosym}
@@ -27,7 +28,7 @@
     Extension=.ttf,
     UprightFont=*-Regular,
     BoldFont=*-Demi,
-    ItalicFont=*-Regular,
+    ItalicFont=*-It,
     BoldItalicFont=*-Demi,
     ]
 
@@ -50,12 +51,13 @@
 
 % colors
 \definecolor{NYUViolet}{RGB}{87, 6, 140}
+\definecolor{LightGray}{gray}{0.75}
 % 66,133,244
 
 % sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape \color{NYUViolet} \raggedright\large
-}{}{0em}{}[\color{NYUViolet} \hrule \vspace{-4pt}]
+\titleformat{\section}
+{\vspace{-4pt} \color{LightGray}\hrule height 0.7pt width \pdfpagewidth \vspace{3pt} \bfseries \large}
+{}{0em}{\centering \color{Black}\MakeUppercase}[ \hrule height 0.7pt \vspace{-4pt}]
 
 % resume subheading four items
 \newcommand{\resumeHeadingFour}[4]{
@@ -70,7 +72,7 @@
 \newcommand{\resumeHeadingTwo}[2]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & {\color{NYUViolet} {\small #2}} \\
+      \textbf{#1} & { {\small #2}} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -99,18 +101,34 @@
 \begin{document}
 
 % heading
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-	\textbf{\href{https://adityamwagh.me/}{\Huge \color{NYUViolet} Aditya \normalfont Wagh}} & \textbf{Email}: \href{mailto:adityamwagh@nyu.edu}{adityamwagh@nyu.edu}\\
-	\href{https://adityamwagh.me/}{\textbf{Website}: https://adityamwagh.me} & \textbf{Phone}: (929) 424 1931 \\
-\end{tabular*}
+\begin{center}
+	\vspace*{-10pt}
+	\begin{center}
+		\uppercase{\Huge \bfseries Aditya \normalfont{Wagh}}
+	\end{center}
+	\vspace{4pt}
+	\href{https://adityamwagh.me}{https://adityamwagh.me} \\
+
+	\vspace{4pt}
+	\faLinkedin\space{} \href{https://linkedin.com/in/adityamwagh}{adityamwagh} \space{}
+	\faGithub{} \space{} \href{https://github.com/adityamwagh}{adityamwagh} \space{}
+	\faAt{} \space{} \href{mailto:adityamwagh@outlook.com}{adityamwagh@outlook.com} \space{}
+	\faPhone{} \space{} (929) 424 1931 \\
+
+	\vspace{4pt}
+	Final year graduate student well-versed in 3D computer vision tasks including but not limited to multi-view geometry,
+	SfM, SLAM, Bundle Adjustment etc with an in-depth understanding of LiDAR point-cloud processing.
+\end{center}
+%  \noindent\makebox[\linewidth]{\rule{\paperwidth}{1pt}}
+% \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
 
 % main content
-\justifying
+\justifying{}
 \import{sections/}{education}
 \import{sections/}{experience}
-\import{sections/}{technical_skills}
-\import{sections/}{coursework}
+% \import{sections/}{coursework}
 \import{sections/}{projects}
+\import{sections/}{technical_skills}
 
 % resume ends here
 \end{document}
