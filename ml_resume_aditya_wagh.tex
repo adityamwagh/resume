@@ -1,0 +1,158 @@
+%-------------------------
+% Resume in Latex
+% Author : Aditya Wagh
+% Website: https://github.com/adityamwagh/resume
+% License : MIT
+%------------------------
+
+% \documentclass[a4paper]{article}
+\documentclass[a4paper, 10.5pt]{article}
+
+% external packages
+\usepackage[top=0in, left=0.5in, right=0.5in, bottom=0in]{geometry}
+\usepackage{fontawesome5}
+\usepackage{latexsym}
+\usepackage[explicit]{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{import}
+\usepackage{fontspec}
+\usepackage{ragged2e}
+\usepackage{multicol}
+\setmainfont{AvenirNextPro}[
+    Path=./fonts/AvenirNext/,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Demi,
+    ItalicFont=*-It,
+    BoldItalicFont=*-Demi,
+    ]
+
+% \setmainfont{Inter}[
+%   Path=./fonts/Inter/,
+%   Extension=.ttf,
+%   UprightFont=*-Regular,
+%   BoldFont=*-SemiBold,
+%   ItalicFont=*-Regular,
+%   BoldItalicFont=*-SemiBold,
+%   ]
+
+% \setmainfont{SFPro}[
+%   Path=./fonts/SFPro/,
+%   Extension=.otf,
+%   UprightFont=*-Light,
+%   BoldFont=*-SemiBold,
+%   ItalicFont=*-Regular,
+%   BoldItalicFont=*-SemiBold,
+%   ]
+
+% header style
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+
+% renew commands
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\labelitemii}{$\circ$}
+
+\urlstyle{same}
+
+\raggedbottom{}
+\raggedright{}
+\setlength{\tabcolsep}{0in}
+\setlength{\titlewidth}{\pdfpagewidth}
+
+% colors
+\definecolor{NYUViolet}{RGB}{87, 6, 140}
+\definecolor{LightGray}{gray}{0.9}
+% 66,133,244
+
+% sections formatting
+\titleformat{\section}
+  {\vspace{-8pt} \color{LightGray}\titlerule[1pt] \vspace{2pt}\centering \large \normalfont \bfseries}
+  {\color{Black} \titlerule \quad \MakeUppercase{#1}}{0em}{\vspace{0pt}}
+  [{ \vspace{-1pt}\color{LightGray}\titlerule[1pt] \vspace{-4pt}}]
+
+
+% resume subheading four items
+\newcommand{\resumeHeadingFour}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+% resume subheading two items
+\newcommand{\resumeHeadingTwo}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & { {\small #2}} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+% resume item
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-4pt}}
+  }
+}
+
+% resume sub-item
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% resume item description
+\newcommand{\resumeItemDesc}[1]{\item\small{#1} \vspace{-4pt}}
+
+% resume sub-heading list
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+% resume item list
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+% resume starts here
+\begin{document}
+
+% heading
+\begin{center}
+	\vspace*{-10pt}
+	\begin{center}
+		\uppercase{\Huge \bfseries Aditya \normalfont{Wagh}}
+	\end{center}
+	\vspace{4pt}
+	\href{https://adityamwagh.me}{https://adityamwagh.me} \\
+
+	\vspace{4pt}
+	\faLinkedin\space{} \href{https://linkedin.com/in/adityamwagh}{adityamwagh} \space{}
+	\faGithub{} \space{} \href{https://github.com/adityamwagh}{adityamwagh} \space{}
+	\faAt{} \space{} \href{mailto:adityamwagh@outlook.com}{adityamwagh@outlook.com} \space{}
+	\faPhone{} \space{} (929) 424 1931 \\
+
+	\vspace{8pt}
+	Machine Learning Engineer
+\end{center}
+%  \noindent\makebox[\linewidth]{\rule{\paperwidth}{1pt}}
+% \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
+
+% main content
+\justifying{}
+% \hrule height 0.7pt width \pdfpagewidth
+\import{sections/}{education}
+% \vspace{8pt}
+\import{sections/}{experience}
+% \vspace{8pt}
+% \import{sections/}{coursework}
+\import{sections/}{ml_projects}
+% \vspace{8pt}
+\import{sections/}{technical_skills}
+% \vspace{8pt}
+
+% resume ends here
+\end{document}

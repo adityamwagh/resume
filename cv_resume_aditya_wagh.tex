@@ -6,11 +6,11 @@
 %------------------------
 
 % \documentclass[a4paper]{article}
-\documentclass[a4paper, 11pt]{article}
+\documentclass[a4paper, 10.5pt]{article}
 
 % external packages
 \usepackage[top=0in, left=0.5in, right=0.5in, bottom=0in]{geometry}
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 \usepackage{latexsym}
 \usepackage[explicit]{titlesec}
 \usepackage{marvosym}
@@ -23,7 +23,7 @@
 \usepackage{fontspec}
 \usepackage{ragged2e}
 \usepackage{multicol}
-\setmainfont{AvenirNextLTPro}[
+\setmainfont{AvenirNextPro}[
     Path=./fonts/AvenirNext/,
     Extension=.ttf,
     UprightFont=*-Regular,
@@ -31,6 +31,24 @@
     ItalicFont=*-It,
     BoldItalicFont=*-Demi,
     ]
+
+% \setmainfont{Inter}[
+%   Path=./fonts/Inter/,
+%   Extension=.ttf,
+%   UprightFont=*-Regular,
+%   BoldFont=*-SemiBold,
+%   ItalicFont=*-Regular,
+%   BoldItalicFont=*-SemiBold,
+%   ]
+
+% \setmainfont{SFPro}[
+%   Path=./fonts/SFPro/,
+%   Extension=.otf,
+%   UprightFont=*-Light,
+%   BoldFont=*-SemiBold,
+%   ItalicFont=*-Regular,
+%   BoldItalicFont=*-SemiBold,
+%   ]
 
 % header style
 \pagestyle{fancy}
@@ -118,8 +136,7 @@
 	\faPhone{} \space{} (929) 424 1931 \\
 
 	\vspace{8pt}
-	% Final year ECE graduate student well-versed in Multi-view geometry, 3D reconstruction,
-	% Visual-Inertial Odometry, SLAM, Visual Localization, Sensor Fusion, Bundle Adjustment, LiDAR point-cloud processing.
+\small{Computer Vision Engineer skilled in Detection, Segmentation, Multi-view Geometry, 3D Reconstruction, Visual-Inertial Odometry, SLAM, Sensor Fusion, Bundle Adjustment, and LiDAR Point-cloud Processing.}
 \end{center}
 %  \noindent\makebox[\linewidth]{\rule{\paperwidth}{1pt}}
 % \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
@@ -132,7 +149,7 @@
 \import{sections/}{experience}
 % \vspace{8pt}
 % \import{sections/}{coursework}
-\import{sections/}{projects}
+\import{sections/}{cv_projects}
 % \vspace{8pt}
 \import{sections/}{technical_skills}
 % \vspace{8pt}
