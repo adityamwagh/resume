@@ -6,7 +6,7 @@
 %------------------------
 
 % \documentclass[a4paper]{article}
-\documentclass[a4paper, 10.5pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
 % external packages
 \usepackage[top=0in, left=0.5in, right=0.5in, bottom=0in]{geometry}
@@ -28,27 +28,9 @@
     Extension=.ttf,
     UprightFont=*-Regular,
     BoldFont=*-Demi,
-    ItalicFont=*-It,
+    ItalicFont=*-Regular,
     BoldItalicFont=*-Demi,
     ]
-
-% \setmainfont{Inter}[
-%   Path=./fonts/Inter/,
-%   Extension=.ttf,
-%   UprightFont=*-Regular,
-%   BoldFont=*-SemiBold,
-%   ItalicFont=*-Regular,
-%   BoldItalicFont=*-SemiBold,
-%   ]
-
-% \setmainfont{SFPro}[
-%   Path=./fonts/SFPro/,
-%   Extension=.otf,
-%   UprightFont=*-Light,
-%   BoldFont=*-SemiBold,
-%   ItalicFont=*-Regular,
-%   BoldItalicFont=*-SemiBold,
-%   ]
 
 % header style
 \pagestyle{fancy}
@@ -74,48 +56,51 @@
 
 % sections formatting
 \titleformat{\section}
-  {\vspace{-8pt} \color{LightGray}\titlerule[1pt] \vspace{2pt}\centering \large \normalfont \bfseries}
-  {\color{Black} \titlerule \quad \MakeUppercase{#1}}{0em}{\vspace{0pt}}
-  [{ \vspace{-1pt}\color{LightGray}\titlerule[1pt] \vspace{-4pt}}]
+  {\color{LightGray} \large \titlerule[1pt] \vspace{2pt}}
+  {\color{Black} \MakeUppercase{#1}}{0em}{}
+  [{\color{Black} \titlerule[1pt]}]
 
+  \titlespacing*{\section}{0pt}{10pt}{4pt}
 
 % resume subheading four items
-\newcommand{\resumeHeadingFour}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small #3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
-}
+\newcommand{\HeadingFour}[4]{
+\vspace{2pt}\item
+    \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+      \normalsize \textbf{#1} & {\footnotesize {#4}} \\
+      \textit{\small #3} & \phantom{#2} \\
+    \end{tabular*}
+    \vspace{-6pt}
+    }
 
 % resume subheading two items
-\newcommand{\resumeHeadingTwo}[2]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & { {\small #2}} \\
-    \end{tabular*}\vspace{-5pt}
+\newcommand{\HeadingTwo}[2]{
+  \vspace{2pt}\item
+    \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & { {\footnotesize #2}} \\
+    \end{tabular*}
+    \vspace{-4pt}
 }
 
 % resume item
-\newcommand{\resumeItem}[2]{
-  \item\small{
+\newcommand{\Item}[2]{
+\item\small{
     \textbf{#1}{: #2 \vspace{-4pt}}
   }
 }
 
 % resume sub-item
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\SubItem}[2]{\Item{#1}{#2}\vspace{-4pt}}
 
 % resume item description
-\newcommand{\resumeItemDesc}[1]{\item\small{#1} \vspace{-4pt}}
+\newcommand{\ItemDesc}[1]{\item\small{#1} \vspace{-4pt}}
 
 % resume sub-heading list
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\SubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\SubHeadingListEnd}{\end{itemize}}
 
 % resume item list
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+\newcommand{\ItemListStart}{\begin{itemize}}
+\newcommand{\ItemListEnd}{\end{itemize}\vspace{-4pt}}
 
 % resume starts here
 \begin{document}
@@ -138,8 +123,6 @@
 	\vspace{8pt}
 \small{Computer Vision Engineer skilled in Detection, Segmentation, Multi-view Geometry, 3D Reconstruction, Visual-Inertial Odometry, SLAM, Sensor Fusion, Bundle Adjustment, and LiDAR Point-cloud Processing.}
 \end{center}
-%  \noindent\makebox[\linewidth]{\rule{\paperwidth}{1pt}}
-% \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
 
 % main content
 \justifying{}
